@@ -12,15 +12,11 @@ jobs:
     - name: Build ship
       run: |
         { echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)
-      
-    - name: cd
+          
+    - name: Commit files
       run: |
         cd ship
         ls
-        pwd
-      
-    - name: Commit files
-      run: |
         git init
         git remote add origin https://github.com/Oigen43/ga-test.git
         git config --local user.email "action@github.com"
