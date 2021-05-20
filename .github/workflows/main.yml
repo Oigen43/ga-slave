@@ -18,14 +18,13 @@ jobs:
     - name: Build ship
       run: |
         rm -rf * ".!(|.|git)"
-        ls
         { echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)
+        cd ship
       
     - name: Commit files
       run: |
         ls
-        cd ship
-        ls
+        git fetch
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
