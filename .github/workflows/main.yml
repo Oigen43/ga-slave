@@ -11,25 +11,22 @@ jobs:
 
     - name: Build ship
       run: |
-        git init
-        git remote add origin https://github.com/Oigen43/ga-test.git
         { echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)
+        cd ship
       
     - name: Commit files
       run: |
-        cd ship
-        ls
+        git init
+        git remote add origin https://github.com/Oigen43/ga-test.git
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Add changes"
-        git log
 
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
         force: true
-        directory: 'ship'
         branch: 'main'
         repository: 'Oigen43/ga-test'
