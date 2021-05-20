@@ -22,7 +22,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: |
-          "{ echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)"
-          pwd
-          ls
+        run: "{ echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)"
+          
+      - name: PWD
+        run: pwd
+        
+      - name: LS
+        run: ls
