@@ -15,8 +15,10 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: Build ship
       run: |
+        ls
         shopt -s dotglob
         rm -rf *
+        ls
         "{ echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)"
       
     - name: Commit files
