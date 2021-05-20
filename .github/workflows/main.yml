@@ -19,7 +19,7 @@ jobs:
         shopt -s dotglob
         rm -rf *
         ls
-        { echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)
+        { echo 'ship-2'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)
       
     - name: Commit files
       run: |
