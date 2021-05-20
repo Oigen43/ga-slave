@@ -14,7 +14,10 @@ jobs:
         { echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)
       
     - name: cd
-      run: cd ship
+      run: |
+        cd ship
+        ls
+        pwd
       
     - name: Commit files
       run: |
@@ -24,7 +27,6 @@ jobs:
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Add changes"
-        git log
 
     - name: Push changes
       uses: ad-m/github-push-action@master
