@@ -22,12 +22,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: Oigen43/ga-master
-          event-type: my-event
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+        run: |
+          "{ echo 'ship'; echo 'Koa'; echo 'React'; } | bash <(curl -s https://raw.githubusercontent.com/paralect/ship-merge/master/ship-merge.sh)"
+          pwd
+          ls
