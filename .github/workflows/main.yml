@@ -14,18 +14,13 @@ jobs:
           
     - name: Commit files
       run: |
-        echo 111
         cd ship
-        ls
         git init
         git remote add origin https://github.com/Oigen43/ga-test.git
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
         git commit -m "Add changes"
-
-    - name: echooo
-      run: echo 2
 
     - name: Push changes
       uses: ad-m/github-push-action@master
