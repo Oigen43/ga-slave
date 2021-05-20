@@ -17,6 +17,7 @@ jobs:
       
     - name: Commit files
       run: |
+        cd ship
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
@@ -28,5 +29,4 @@ jobs:
         github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
         force: true
         branch: 'main'
-        directory: './ship'
         repository: 'Oigen43/ga-master'
