@@ -26,6 +26,7 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        force: true
         branch: 'main'
         directory: './ship'
         repository: 'Oigen43/ga-master'
